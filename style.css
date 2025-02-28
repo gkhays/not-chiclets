@@ -61,3 +61,41 @@ h2 {
     background-color: #2980b9;
     cursor: pointer;
 }
+
+/* Mobile support */
+@media (max-width: 768px) {
+    .grid-container-small, .grid-container-large {
+        justify-content: flex-start;
+    }
+    
+    /* Add horizontal scrolling for mobile */
+    .grid-container-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 15px; /* Space for potential scrollbar */
+    }
+    
+    @media (max-width: 480px) {
+        .grid-container-small {
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(4, 60px);
+        }
+        
+        .grid-item-small {
+            width: 60px;
+            height: 60px;
+            font-size: 12px;
+        }
+        
+        .grid-container-large {
+            grid-template-columns: repeat(8, 120px);
+            grid-template-rows: repeat(4, 120px);
+        }
+        
+        .grid-item-large {
+            width: 120px;
+            height: 120px;
+            font-size: 16px;
+        }
+    }
+}
